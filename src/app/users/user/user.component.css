@@ -1,0 +1,17 @@
+.card{
+    width: 100%;
+    margin: 30px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+}
+
+.content{
+    padding: 10px;
+}
+
+button{
+    margin-right: 20px;
+}

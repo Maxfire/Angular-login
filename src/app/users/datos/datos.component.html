@@ -1,0 +1,30 @@
+<div class="container">
+    <form class="form item" #checkoutForm="ngForm">
+        <mat-form-field class="form__element">
+
+            <input matInput placeholder="Id" required [(ngModel)]="model.id" name="id"
+                #usuario="ngModel" [readonly]="true" />
+        </mat-form-field>
+
+        <mat-form-field class="form__element">
+
+            <input matInput placeholder="Usuario" required [(ngModel)]="model.usuario" name="usuario"
+                #usuario="ngModel" />
+        </mat-form-field>
+
+        <mat-form-field class="form__element">
+
+            <input matInput placeholder="Contraseña" required [(ngModel)]="model.contrasena" name="contrasena"
+                #usuario="ngModel" />
+        </mat-form-field>
+
+
+        <div class="container__button">
+
+            <button mat-raised-button color="primary" type="submit" (click)="onSubmit(checkoutForm)">
+                Guardar
+            </button>
+        </div>
+
+    </form>
+</div>

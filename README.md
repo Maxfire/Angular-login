@@ -1,19 +1,35 @@
-# Angular-login
-Proyecto en Angular de login
+# UsuariosAngular
 
-Crear una aplicación simple de registro, inicio de sesión y administración de usuarios (CRUD) con Angular 14 o 15.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.0.
 
-La aplicacion debe contener las siguientes páginas para demostrar la funcionalidad de inicio de sesión, registro y CRUD:
+## Development server
 
-- Iniciar sesión (/account/login): un formulario de inicio de sesión simple con campos de nombre de usuario y contraseña.
-- Registrarse (/account/register): un formulario para registrar una nueva cuenta.
-- Inicio (/): la página de inicio con un mensaje de bienvenida que se muestra después de iniciar sesión correctamente.
-- Lista de usuarios (/users): la página predeterminada de la sección de usuarios para realizar operaciones CRUD. Muestra una lista de todos los usuarios con botones para agregar, editar y eliminar.
-- Agregar usuario (/users/add): un formulario para crear un nuevo usuario.
-- Editar usuario (/users/edit/:id): un formulario para actualizar el usuario con el :id especificado.
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Formas construidas con Angular Reactive Forms
-Los formularios pueden estar construidos con la biblioteca Reactive Forms que viene como parte del marco Angular (en @angular/forms). Utiliza un enfoque basado en modelos para crear, validar y manejar formularios en Angular. Para obtener más información, consulta [aquí](https://angular.io/guide/reactive-forms).
+## Code scaffolding
 
-### Notas para devs
-Puedes utilizar el backend que consideres, node, o el "fake backend" de angular, mas info aquí [aquí](https://medium.com/echohub/angular-httpinterceptor-usage-like-fake-backend-ee20353ded72) 
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+
+## Build
+
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+
+## Running unit tests
+
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+
+## Running end-to-end tests
+
+Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.n
+
+## Run fake backend
+
+Run `npm run serverAPI` to execute a fake backend API using `json-server`
+
+## Run development server 
+
+Run `npm run dev` to execute concurrently `npm run start` and `npm run serverAPI`
+
+## Further help
+
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.

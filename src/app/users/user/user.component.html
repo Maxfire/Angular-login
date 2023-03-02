@@ -1,0 +1,15 @@
+<mat-card class="card">
+    <mat-card-header>
+        # {{usuario.id}}
+    </mat-card-header>
+    <mat-card-content class="content">
+        {{usuario.usuario}} -
+        {{usuario.contrasena}}
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-flat-button color="primary" (click)="editar()">
+            <mat-icon>face</mat-icon>Editar</button>
+        <button mat-flat-button color="primary" (click)="eliminar()">
+            <mat-icon>delete-forever</mat-icon>Eliminar</button>
+    </mat-card-actions>
+</mat-card>

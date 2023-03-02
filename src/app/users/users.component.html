@@ -1,0 +1,16 @@
+<div class="container">
+
+    <section class="usuarios">
+        
+    <app-user 
+    (editarUsuario)="editarUsuario($event)"
+    (eliminarUsuario)="eliminarUsuario($event)"
+    
+    [usuario]="usuario" *ngFor="let usuario of usuarios">
+
+
+    </app-user>
+    
+    
+    </section>
+</div>
