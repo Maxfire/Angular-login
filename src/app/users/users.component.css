@@ -1,0 +1,13 @@
+.container{
+    margin-top: 2rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    font-size: 20px;
+}
+
+.usuarios{
+    width: 60%;
+}

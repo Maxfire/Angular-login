@@ -1,0 +1,16 @@
+<mat-toolbar color="primary">
+ 
+  <span>Gestión de usuarios</span>
+  <span class="example-spacer"></span>
+  <span>{{ usuario$ | async}}</span>
+
+  <button mat-icon-button class="example-icon " aria-label="Example icon-button with home icon" (click)="navegar('/')">
+    <mat-icon>home</mat-icon>
+  </button>
+  <button mat-icon-button class="example-icon " aria-label="Example icon-button with heart icon" *ngIf="usuario$ | async"
+    (click)="navegar('/users')">
+    <mat-icon>account_circle</mat-icon>
+  </button>
+  <a [routerLink]="['/account/login']" *ngIf="!(usuario$ | async)">Inicia Sesión</a>
+  <a (click)="cerrarSesion()" *ngIf="usuario$ | async">Cerrar Sesión</a>
+</mat-toolbar>

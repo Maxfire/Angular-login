@@ -1,0 +1,27 @@
+.container{
+    margin-top: 4rem;
+}
+.item{
+    flex: 1 1 auto;
+}
+.form{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+}
+
+.container__button{
+    margin: 0 auto;
+    display: block;
+    width: 10%;
+ 
+}
+label{
+    width: 100px;
+    display: inline-block;
+}
+button{
+    width: 100%;
+}

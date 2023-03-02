@@ -1,0 +1,24 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "usuario": "Alfonso",
+      "contrasena": "dexter34567"
+    },
+    {
+      "id": 2,
+      "usuario": "Sara",
+      "contrasena": "tirma34567"
+    },
+    {
+      "id": 3,
+      "usuario": "Enma",
+      "contrasena": "snoopy006"
+    },
+    {
+      "usuario": "paula",
+      "contrasena": "mango",
+      "id": 4
+    }
+  ]
+}

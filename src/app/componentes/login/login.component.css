@@ -1,0 +1,28 @@
+.container{
+    margin-top: 4rem;
+}
+
+.form{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+}
+.link{
+    margin-top: 1rem;
+}
+
+.container__button{
+    margin: 0 auto;
+    display: block;
+    width: 10%;
+ 
+}
+label{
+    width: 100px;
+    display: inline-block;
+}
+button{
+    width: 100%;
+}

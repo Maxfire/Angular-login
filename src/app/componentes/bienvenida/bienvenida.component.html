@@ -1,0 +1,9 @@
+<div class="container">
+    <div>Bienvenido <span>{{ usuario$ | async}}</span></div>
+    <div *ngIf="usuario$ | async">
+        <a [routerLink]="['/users']">  <mat-icon>account_circle</mat-icon> Listado de usuarios</a>
+    </div>
+    <div *ngIf="!(usuario$ | async)">
+        <span>Inicie sesión para gestionar los usuarios</span>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+.container{
+    margin-top: 2rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    font-size: 20px;
+}
+
+div {
+    margin-top: 2rem;
+}
+
+a{
+    text-decoration:none;
+    color: #673ab7;
+    cursor:pointer;
+  }
