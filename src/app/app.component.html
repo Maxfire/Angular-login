@@ -1,0 +1,41 @@
+﻿<!-- nav -->
+<nav class="navbar navbar-expand navbar-dark bg-dark px-3" *ngIf="user">
+  <div class="navbar-nav">
+    <a
+      class="nav-item nav-link"
+      routerLink="/"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      >Inicio</a
+    >
+    <a class="nav-item nav-link" routerLink="/users" routerLinkActive="active"
+      >Usuarios</a
+    >
+    <button class="btn btn-link nav-item nav-link" (click)="logout()">
+      Desconectar
+    </button>
+  </div>
+</nav>
+
+<!-- main app container -->
+<div class="app-container" [ngClass]="{ 'bg-light': user }">
+  <alert></alert>
+  <router-outlet></router-outlet>
+</div>
+
+<!-- credits -->
+<div class="text-center mt-4">
+  <h3>Bibliografía usada</h3>
+  <p>
+    <a
+      href="https://jasonwatmore.com/post/2022/11/29/angular-14-user-registration-and-login-example-tutorial"
+      target="_top"
+      >Angular 14 - Tutorial de Login y Registro de usuarios</a
+    >
+  </p>
+  <p>
+    <a href="https://jasonwatmore.com" target="_top"
+      >Página del autor del curso</a
+    >
+  </p>
+</div>
