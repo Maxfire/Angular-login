@@ -1,0 +1,54 @@
+<app-navbar></app-navbar>
+
+<!-- SI AUN ESTA CARGANDO -->
+<app-progress-bar *ngIf="loading==true"></app-progress-bar>
+
+<!-- SI YA NO ESTA CARGANDO -->
+<div *ngIf="loading==false" class="container">
+    
+    <div class="titulo">
+        <h4>Lista de productos</h4>
+        <button type="button" class="btn btn-primary" routerLink="/productos/add">Añadir producto</button>
+
+    </div>
+
+    <div class="table-responsive">
+
+      <table *ngIf="listaProductos.length > 0" class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Descripcion</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Existencias</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr *ngFor="let item of listaProductos" class="table-active">
+            <td>{{ item.id }}</td>
+            <td>{{ item.nombre }}</td>
+            <td>{{ item.descripcion }}</td>
+            <td>{{ item.precio | currency }}</td>
+            <td>{{ item.existencias }}</td>
+            <td>
+                <button type="button" class="btn btn-outline-primary btn-sm" routerLink="/productos/edit/{{ item.id }}">Editar</button>
+                
+            </td>
+            <td>
+              <!--VAL0R ID ESTA DEFINIDO COMO OPCIONAL POR TANTO ES NECESARIO AÑADIR ! AL FINAL -->
+                <button (click)="eliminarProducto(item.id!)" type="button" class="btn btn-outline-danger btn-sm">Eliminar</button>
+            </td>
+            
+          </tr>
+
+        </tbody>
+      </table>
+      <!-- SI NO HAY NINGUN ELEMENTO EN LA LISTA DE PRODUCTOS -->
+      <h5 *ngIf="listaProductos.length == 0">No hay productos para mostrar</h5>
+    </div>
+
+</div>
