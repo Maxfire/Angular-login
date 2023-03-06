@@ -8,12 +8,12 @@ const routes: Routes = [
     children: [
       { path: '', component: DashboardComponent },
       { path: '**', redirectTo: '' },
-    ]
-  }
+    ],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class ProtectedRoutingModule { }
+export class ProtectedRoutingModule {}
