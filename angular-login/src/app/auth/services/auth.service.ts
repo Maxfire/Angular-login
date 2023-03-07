@@ -13,16 +13,19 @@ export class AuthService {
   private baseUrl: string = environment.ApiUrl;
   private _user!: User;
 
+  // Getter datos del usuario
   get user() {
     return { ...this._user };
   }
 
   constructor(private _http: HttpClient) {}
 
+  // Función login
   login(email: string, password: string) {
     const url = `${this.baseUrl}/auth/login`;
     const body = { email, password };
     return this._http.post<AuthResponse>(url, body).pipe(
+      // Con tap realizamos acciones secundarias, en este caso si la respuesta es correcta guardamos los datos del usuario
       tap((resp) => {
         if (resp.ok === true) {
           this.setUserData(resp.token!, resp.uid!, resp.name!, email);
@@ -33,10 +36,12 @@ export class AuthService {
     );
   }
 
+  // Función logout
   logout() {
     localStorage.clear();
   }
 
+  // Función register
   register(name: string, email: string, password: string) {
     const url = `${this.baseUrl}/auth/new`;
     const body = { email, password, name };
@@ -46,11 +51,12 @@ export class AuthService {
     );
   }
 
+  // Función para validar el token del usuario
   validateToken() {
     const url = `${this.baseUrl}/auth/renew`;
     const headers = new HttpHeaders().set(
       'x-token',
-      localStorage.getItem('token') || ''
+      localStorage.getItem('token') || '' 
     );
     return this._http.get<AuthResponse>(url, { headers }).pipe(
       map((resp) => {
@@ -61,6 +67,7 @@ export class AuthService {
     );
   }
 
+  // Función para actualizar datos del usuario y guardar token
   setUserData(token: string, uid: string, name: string, email?: string) {
     localStorage.setItem('token', token!);
 

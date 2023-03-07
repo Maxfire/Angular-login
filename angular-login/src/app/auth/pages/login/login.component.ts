@@ -10,6 +10,7 @@ import Swal from 'sweetalert2';
   styles: [],
 })
 export class LoginComponent implements OnInit {
+  // Inicialización del formulario
   myForm: FormGroup = this._fb.group({
     email: ['quizasdudas@gmail.com', [Validators.required, Validators.email]],
     password: ['123456', [Validators.required, Validators.minLength(6)]],
@@ -23,9 +24,9 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  // Login
   login() {
     const { email, password } = this.myForm.value;
-
     this._authService.login(email, password).subscribe((resp) => {
       if (resp === true) {
         this._router.navigateByUrl('/dashboard');

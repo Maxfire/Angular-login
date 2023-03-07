@@ -1,0 +1,40 @@
+<div class="container-fluid m-3">
+    <div class="row">
+        <div class="col" *ngIf="users">
+            <h4 class="mt-4 text-center">Información de usuarios</h4>
+            <div class="container mt-4">
+                <table class="table table-striped">
+                    <thead class="table-dark">
+                        <tr>
+                            <th style="width: 10%" scope="col">#</th>
+                            <th style="width: 30%" scope="col">Nombre</th>
+                            <th style="width: auto" scope="col">Email</th>
+                            <th style="width: 10%" class="text-center" scope="col">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let user of users; let i = index">
+                            <th scope="row">{{i}}</th>
+                            <td>{{user.name}}</td>
+                            <td class="m-auto">{{user.email}}</td>
+                            <td style="white-space: nowrap;">
+                                <a routerLink="edit/{{user._id}}" class="btn btn-sm btn-outline-dark me-1">Editar</a>
+                                <button (click)="deleteUser(user._id)"
+                                    class="btn btn-sm btn-outline-danger btn-delete-user">Borrar
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="4" class="text-center" style="border:none">
+                                <a routerLink="add" class="btn btn-dark px-4">Añadir
+                                    usuario</a>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

@@ -10,6 +10,7 @@ import { AuthService } from '../../services/auth.service';
   styles: [],
 })
 export class RegisterComponent implements OnInit {
+  // Inicialización del formulario
   myForm: FormGroup = this._fb.group({
     name: ['name', [Validators.required, Validators.minLength(4)]],
     email: ['test1@test.com', [Validators.required, Validators.email]],
@@ -23,6 +24,7 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  // Registro
   save() {
     const { name, email, password } = this.myForm.value;
     this._authService.register(name, email, password).subscribe((resp) => {
