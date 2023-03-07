@@ -13,6 +13,7 @@ import Swal from 'sweetalert2';
   styles: [],
 })
 export class AddComponent implements OnInit {
+  // Inicialización de formulario
   userForm: FormGroup = this._fb.group({
     name: ['Rafinha', [Validators.required]],
     email: ['r4f4@hotmail.com', [Validators.required, Validators.email]],
@@ -36,7 +37,7 @@ export class AddComponent implements OnInit {
   ngOnInit(): void {
     this._activatedRoute.params
       .pipe(
-        filter(({ id }) => !!id), // <-- Agregar el operador filter
+        filter(({ id }) => !!id), // <-- Comprueba si hay id
         switchMap(({ id }) => this._userService.getById(id))
       )
       .subscribe((user) => {
@@ -49,6 +50,7 @@ export class AddComponent implements OnInit {
       });
   }
 
+  // Guardado o actualización
   save() {
     const { name, email, password } = this.userForm.value;
 

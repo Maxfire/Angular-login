@@ -12,6 +12,7 @@ export class UserService {
   public users: User[] = [];
   constructor(private _http: HttpClient) {}
 
+  // Listar todos los usuarios
   list() {
     const url = `${this.baseUrl}/users`;
     const headers = new HttpHeaders().set(
@@ -22,6 +23,7 @@ export class UserService {
     return this._http.get<UserResponse[]>(url, { headers });
   }
 
+  // Usuario por Id
   getById(id: string) {
     const url = `${this.baseUrl}/users/${id}`;
     const headers = new HttpHeaders().set(
@@ -31,6 +33,7 @@ export class UserService {
     return this._http.get<UserResponse>(url, { headers });
   }
 
+  // Actualizar usuario
   update(id: string, name?: string, email?: string, password?: string) {
     const url = `${this.baseUrl}/users/${id}`;
     const headers = new HttpHeaders().set(
@@ -48,6 +51,7 @@ export class UserService {
     );
   }
 
+  // Borrar usuario
   delete(id: string) {
     const url = `${this.baseUrl}/users/${id}`;
     const headers = new HttpHeaders().set(

@@ -17,6 +17,7 @@ export class ListComponent implements OnInit {
     this.reloadUsers();
   }
 
+  // Borrar usuario
   deleteUser(userId: string) {
     Swal.fire({
       title: 'Estás segur@?',
@@ -35,7 +36,8 @@ export class ListComponent implements OnInit {
       }
     });
   }
-
+  
+  // Recargar lista de usuarios
   reloadUsers() {
     this._userService.list().subscribe((resp) => {
       this.users = resp;
