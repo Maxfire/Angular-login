@@ -1,0 +1,38 @@
+<!-- Add/edit component -->
+<form class="login100-form" autocomplete="off" [formGroup]="userForm" (ngSubmit)="save()">
+
+    <!-- Contenedor principal -->
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-6 col-sm-10">
+                <!-- Título -->
+                <h2 class="login100-form-title my-5">{{ user._id ? 'Editar' : 'Nuevo' }} usuario</h2>
+
+                <!-- Nombre -->
+                <div class="form-group mb-3">
+                    <label class="labels">Nombre</label>
+                    <input type="text" class="form-control" formControlName="name">
+                </div>
+
+                <!-- Correo electrónico -->
+                <div class="form-group mb-3">
+                    <label class="labels">Email</label>
+                    <input type="email" class="form-control" formControlName="email">
+                </div>
+
+                <!-- Contraseña -->
+                <div class="form-group mb-3">
+                    <label class="labels">Contraseña</label>
+                    <input type="password" class="form-control" formControlName="password">
+                </div>
+
+                <!-- Botón para guardar o añadir usuario -->
+                <div class="mt-5 text-center">
+                    <button class="btn btn-dark" type="submit" [disabled]="userForm.invalid">
+                        {{ user._id ? 'Guardar' : 'Añadir' }}
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
